@@ -1,0 +1,7 @@
+# Never commit secrets — providers read keys from env/keychain, never from the repo
+.env
+*.env
+providers/*.local.*
+**/providers.json
+*.key
+.DS_Store
