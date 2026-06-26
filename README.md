@@ -83,4 +83,4 @@ sits on top of what these *find*:
 
 ## License
 
-MIT.
+Apache-2.0.
