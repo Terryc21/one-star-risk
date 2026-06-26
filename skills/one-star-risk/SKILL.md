@@ -135,10 +135,10 @@ required.** Providers live in `providers/`. Three ship in v1:
 - **`providers/applyra.md`** — an *example* paid adapter the author could test, included so the
   seam is proven against a real key-gated API. Key from the **environment / OS keychain, never a
   file in this repo.**
-- **`providers/appfollow.md`** — a *second example* paid adapter, an **unverified stub**, included
+- **`providers/appfigures.md`** — a *second example* paid adapter, an **unverified stub**, included
   precisely so the seam visibly has more than one vendor and the skill plays no favorites.
 
-Applyra and AppFollow are two examples among many (App Radar, Sensor Tower, MobileAction, …). Use
+Applyra and Appfigures are two examples among many (App Radar, AppFollow, Sensor Tower, …). Use
 whichever ASO service you already pay for, or none — RSS is the default. Select with
 `--provider=<name>` (default: `rss`). To add a different vendor, drop a new file in `providers/`
 following the same contract — see `providers/CONTRACT.md`. **Fail soft, never hard:** if a configured provider errors (API
@@ -241,7 +241,7 @@ measurement is the dishonest one.
 - `reference/rubric.md` — the criterion's full provenance and worked examples (the CloudKit
   21%-sync 🔴, the scout-range 🟡→🟢 demotion), for when you want the long form.
 - `providers/CONTRACT.md` — the provider interface; how to add a vendor.
-- `providers/rss.md` (free default), `providers/applyra.md` + `providers/appfollow.md` (example
+- `providers/rss.md` (free default), `providers/applyra.md` + `providers/appfigures.md` (example
   paid adapters — no vendor endorsed; use whichever you pay for, or none).
 
 *This skill packages a way-of-thinking, not a checker. Its output is an opinion that shows its

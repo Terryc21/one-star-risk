@@ -11,7 +11,7 @@ Every provider file (`providers/<name>.md`) must document how to produce:
 ```
 ground(competitorAppIDs, opts) → {
   corpus:  [ { rating, title, body, country, date } ],   # the reviews (may be empty)
-  tier:    "<vendor>" | "rss" | "paste" | "none",         # which provider grounded (e.g. "applyra", "appfollow")
+  tier:    "<vendor>" | "rss" | "paste" | "none",         # which provider grounded (e.g. "applyra", "appfigures")
   depth:   { count, countries, dateRange },               # how deep — for the honesty line
   caveats: [ "recent themes, not exhaustive", ... ]       # what NOT to over-claim
 }
