@@ -1,15 +1,30 @@
 # one-star-risk
 
-A Claude Code skill that re-scores audit findings for **App Store one-star-review risk**.
+A Claude Code skill that answers one question before you ship an app:
+**which of your known issues could actually cost you a one-star review?**
 
-It is a **judgment lens, not a detector.** Feed it findings you already have — a `git diff`, a
-file, a TODO list, or another auditor's output — and it returns each one with a 🔴/🟡/🟢/⚪ band,
-a **named, overridable trigger**, and a skeptic-pass result. It grounds those bands in *why apps
-like yours actually get one star* (rarely the crash — it's "used to work / I paid for this / the
-app told me X and it was wrong"), using real competitor reviews when available.
+You already have a list of things that aren't perfect — a `git diff`, a `TODO` list, notes
+from another code review. Most of them no user will ever care about. A few could tank your
+App Store rating. This skill sorts them: it tags each issue with how much it threatens your
+rating, and — this is the important part — **explains its reasoning for every tag, so you can
+disagree.**
 
-The whole design serves one constraint: **never let "the agent assigned 🔴" start reading as
-"this IS 🔴."** Every band shows its work or gets demoted.
+```
+🔴 HIGH   Sync only copies 21% of a user's data   → they see most of their stuff vanish on a
+                                                      second device. "It broke." People review over this.
+🟢 LOW    "Add warranty" takes two taps not one    → mild annoyance, nobody one-stars over it.
+⚪ NONE    Internal helper has a confusing name     → users never see it.
+```
+
+It works because it's grounded in *why apps actually get one star* — which is rarely the
+crash. It's the **"it used to work / I paid for this / the app told me something that wasn't
+true"** feeling. When you point it at competitor App Store reviews, it learns that app's real
+complaints and scores against them; with no reviews to learn from, it says so plainly and
+treats its scores as guesses.
+
+It does **not** find bugs — you feed it issues you already have, and it triages them. And it is
+deliberately built to *talk itself down*: a scary-looking tag that it can't justify in one
+sentence gets demoted, so the top of the list is trustworthy rather than alarmist.
 
 ## Install
 
