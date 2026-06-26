@@ -127,18 +127,21 @@ it was wrong" feeling. The skill grounds against real competitor reviews when it
 
 ### How grounding plugs in (provider seam, not hardcoded vendors)
 
-The skill talks to **a provider**, never to a specific vendor. Providers live in
-`providers/`. Two ship in v1:
+The skill talks to **a provider**, never to a specific vendor — **no ASO company is endorsed or
+required.** Providers live in `providers/`. Three ship in v1:
 
 - **`providers/rss.md`** — free default, zero setup, the public path. Apple's public RSS
-  customer-reviews feed. No key, no account.
-- **`providers/applyra.md`** — a paid ASO API the author can test, which is what makes the
-  seam trustworthy to ship. Reads its key from the **environment / OS keychain, never from a
-  file in this repo.** Free users simply don't configure it and fall to RSS.
+  customer-reviews feed. No key, no account. **This is what everyone uses unless they opt in.**
+- **`providers/applyra.md`** — an *example* paid adapter the author could test, included so the
+  seam is proven against a real key-gated API. Key from the **environment / OS keychain, never a
+  file in this repo.**
+- **`providers/appfollow.md`** — a *second example* paid adapter, an **unverified stub**, included
+  precisely so the seam visibly has more than one vendor and the skill plays no favorites.
 
-Select with `--provider=<name>` (default: `rss`). To add another vendor (App Radar, AppFollow,
-Sensor Tower…), drop a new file in `providers/` following the same contract — see
-`providers/CONTRACT.md`. **Fail soft, never hard:** if a configured provider errors (API
+Applyra and AppFollow are two examples among many (App Radar, Sensor Tower, MobileAction, …). Use
+whichever ASO service you already pay for, or none — RSS is the default. Select with
+`--provider=<name>` (default: `rss`). To add a different vendor, drop a new file in `providers/`
+following the same contract — see `providers/CONTRACT.md`. **Fail soft, never hard:** if a configured provider errors (API
 changed, key missing, network), catch it, print *"<Provider> grounding failed; falling back to
 free App Store RSS,"* and continue. A broken paid adapter is a *degraded* run, never a *broken*
 skill.
@@ -238,7 +241,8 @@ measurement is the dishonest one.
 - `reference/rubric.md` — the criterion's full provenance and worked examples (the CloudKit
   21%-sync 🔴, the scout-range 🟡→🟢 demotion), for when you want the long form.
 - `providers/CONTRACT.md` — the provider interface; how to add a vendor.
-- `providers/rss.md`, `providers/applyra.md` — the two v1 adapters.
+- `providers/rss.md` (free default), `providers/applyra.md` + `providers/appfollow.md` (example
+  paid adapters — no vendor endorsed; use whichever you pay for, or none).
 
 *This skill packages a way-of-thinking, not a checker. Its output is an opinion that shows its
 work. If a band can't name a trigger that survives a skeptic, it isn't a band — it's noise.*

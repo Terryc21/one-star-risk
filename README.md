@@ -42,12 +42,21 @@ threaten my rating?"*, or invoke `/one-star-risk`.
 |---|---|---|
 | Free default | `rss` — Apple's public customer-reviews feed | none |
 | Paste fallback | user-supplied competitor reviews | paste them in |
-| Paid (optional) | `applyra` (reference adapter) | `APPLYRA_API_KEY` in your env |
+| Paid (optional) | **any ASO review API you already pay for** | set its key in your env |
 | None | ungrounded priors | — (degrades loudly) |
+
+**No vendor is endorsed or required.** The skill talks to a *provider interface*
+([`providers/CONTRACT.md`](skills/one-star-risk/providers/CONTRACT.md)), not to any one company.
+The free Apple RSS feed is the default and needs nothing. If you happen to subscribe to an ASO
+service (App Radar, AppFollow, Sensor Tower, MobileAction, Applyra, …), you can plug it in as a
+deeper review source. Two paid adapters ship as **examples** so the seam is real, not theoretical
+— [`applyra`](skills/one-star-risk/providers/applyra.md) (verified by the author) and
+[`appfollow`](skills/one-star-risk/providers/appfollow.md) (an unverified stub showing how to add
+your own). Adding a different vendor is a one-file adapter; see the contract.
 
 Every run **reports its grounding tier** and degrades loudly when there's no corpus. A paid
 provider deepens the *evidence*, never the *rubric* — paying buys better-grounded scores, not
-better scores.
+better scores. The skill does not recommend buying anything.
 
 ## Maintenance / best-effort contract
 
@@ -73,7 +82,8 @@ skills/one-star-risk/
   providers/
     CONTRACT.md            # provider interface + the 4 rules
     rss.md                 # free default adapter
-    applyra.md             # reference paid adapter (key from env/keychain, never repo)
+    applyra.md             # example paid adapter, verified (key from env/keychain, never repo)
+    appfollow.md           # example paid adapter, unverified stub (shows how to add a vendor)
   reference/
     rubric.md              # provenance + worked examples (the 🔴 and the 🟡→🟢 demotion)
 examples/
