@@ -203,10 +203,14 @@ A report, in this order:
    - **Rich form** (chat widget, HTML): the strip can sit *inside the Verdict cell*, below the
      verdict prose. Keep it accessible (see the accessibility rule below).
    - **Markdown fallback** (a file, a pasted report, CI — anywhere a widget can't render):
-     **do not skip the strip — emit an ASCII version** so the lean survives a copy-paste. One
-     per row, e.g. `At risk |·····★····| Clear` (the `★` sits in the third of the bar matching
-     the band, nudged toward an edge per the lean). The ranked table is still canonical; the
-     ASCII strip rides in the Verdict cell or an adjacent column.
+     **do not skip the strip — emit an ASCII version** so the lean survives a copy-paste. The
+     `★` sits in the third of the bar matching the band, nudged toward an edge per the lean. The
+     ranked table is still canonical; the ASCII strip rides in the Verdict cell or its own
+     column. **Inside a markdown table cell, make the strip one unbroken inline-code span with
+     no internal spaces** (spaces and `|` let the renderer wrap or break the column) — e.g.
+     `` `risk‹───★─────›clear` `` with the lean word on the next line via `<br>`. In a fenced
+     code block (not a table) the spaced form `At risk |·····★····| Clear` is fine, since code
+     blocks don't wrap.
 
    **The zone is the band and is firm; the star's position *within* a zone is only a lean** —
    how near the skeptic pass came to the adjacent band — assigned from named lean-words

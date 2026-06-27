@@ -89,14 +89,15 @@ as "cleared to 🟢" so the direction isn't mistaken for "made worse.")*
 
 **Grounded via: none (ungrounded priors).** Pre-launch weighting applied.
 
-Risk strip legend: `At risk |———★———| Clear` — left = riskier, right = safer. The **zone is
-the band**; the star's nudge within a zone is a **lean** (words, not a score).
+Risk strip legend: `risk‹───★─────›clear` — left = riskier, right = safer; the `★` marks the
+band. The **zone is the band**; the star's nudge within a zone is a **lean** stated in the word
+below it (`watch, deep` / `clear` …), not a score.
 
 | Band | ID | Finding | Trigger (named) | Verdict | Risk strip |
 |---|---|---|---|---|---|
-| 🟡 MED | S104 | Paywall lists "Recall alerts" as a paid benefit, but it's free for everyone (gate unwired) | Notice ✅ + feel-wronged ✅ + act-publicly ✅ — a false *payment* claim on a surface every prospective subscriber sees; pricing dishonesty is a top one-star driver for this app class | holds — survives all three parts; a false paywall promise is review-bomb territory, and pre-launch weighting keeps it up | `At risk \|——★———————\| Clear` (watch, deep) |
-| 🟢 LOW | S99 | Scout returns value ranges vs. locked point-estimate screenshot | Marketing-mismatch only (sharpener 2); the range itself is *more* honest — fails feel-wronged as a defect | cleared to 🟢 — range is a positive, not a bug; only angle is a screenshot mismatch, a marketing item | `At risk \|————————★—\| Clear` (clear) |
-| 🟢 LOW | S67 | Add Extended Warranty needs 2 clicks (expand disclosure → tap Add) | Notice ✅ (core-ish flow), but feel-wronged/act-publicly fail — annoyance on a non-core add-on, not grievance | cleared to 🟢 — two-taps-where-one-would-do is friction, not betrayal; the feature works | `At risk \|—————————★\| Clear` (clear) |
+| 🟡 MED | S104 | Paywall lists "Recall alerts" as a paid benefit, but it's free for everyone (gate unwired) | Notice ✅ + feel-wronged ✅ + act-publicly ✅ — a false *payment* claim on a surface every prospective subscriber sees; pricing dishonesty is a top one-star driver for this app class | holds — survives all three parts; a false paywall promise is review-bomb territory, and pre-launch weighting keeps it up | `risk‹───★─────›clear`<br>watch, deep |
+| 🟢 LOW | S99 | Scout returns value ranges vs. locked point-estimate screenshot | Marketing-mismatch only (sharpener 2); the range itself is *more* honest — fails feel-wronged as a defect | cleared to 🟢 — range is a positive, not a bug; only angle is a screenshot mismatch, a marketing item | `risk‹───────★─›clear`<br>clear |
+| 🟢 LOW | S67 | Add Extended Warranty needs 2 clicks (expand disclosure → tap Add) | Notice ✅ (core-ish flow), but feel-wronged/act-publicly fail — annoyance on a non-core add-on, not grievance | cleared to 🟢 — two-taps-where-one-would-do is friction, not betrayal; the feature works | `risk‹────────★›clear`<br>clear |
 
 **⚪ pile:** 1 finding scored ⚪ NONE — **S110** (internal cache-key collision; invalidated on
 view, never surfaces a wrong value to a user). Fix for correctness, but it's not a rating risk.
