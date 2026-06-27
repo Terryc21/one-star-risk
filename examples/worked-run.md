@@ -5,7 +5,8 @@ deferred-work backlog. It demonstrates four things the skill promises:
 
 - the **loud ungrounded-degradation line** (no competitor reviews were supplied),
 - a **named trigger** on every band (the honesty guardrail),
-- the **aggressive skeptic pass** firing on its own and demoting both findings, and
+- the **aggressive skeptic pass** firing on its own and lowering both findings' risk
+  (in the report this reads as "cleared to 🟢", not "demoted"), and
 - the value being **triage** — neither finding turned out to threaten the rating.
 
 ---
@@ -30,9 +31,9 @@ deferred-work backlog. It demonstrates four things the skill promises:
 
 **Grounding:** No competitor apps or App Store ID named.
 
-> ⚠️ **No grounding corpus — bands below are priors from the generic rubric, not from real
-> reviews.** Treat them as hypotheses, not findings. To ground this, name competitor App Store
-> IDs (free RSS) or set `APPLYRA_API_KEY` (deeper corpus).
+> ⚠️ **No reviews to learn from — bands below are priors from the generic scoring test, not from
+> real reviews.** Treat them as hypotheses, not findings. To ground this, name competitor App
+> Store IDs (free RSS) or set `APPLYRA_API_KEY` (more reviews to learn from).
 
 **Context flag:** pre-launch → no-review-buffer premium applies (borderline bands bump up,
 marketing mismatches treated as more urgent).
@@ -60,15 +61,15 @@ marketing mismatches treated as more urgent).
 
 **Grounded via: none (ungrounded priors).** Pre-launch weighting applied.
 
-| Band | ID | Finding | Trigger (named) | Skeptic result |
+| Band | ID | Finding | Trigger (named) | Verdict |
 |---|---|---|---|---|
-| 🟢 LOW | S99 | Scout returns value ranges vs. locked point-estimate screenshot | Marketing-mismatch only (sharpener 2); the range itself is *more* honest — fails feel-wronged as a defect | demoted 🟡→🟢: range is a positive, not a bug; only angle is a screenshot mismatch — a marketing item |
-| 🟢 LOW | S67 | Add Extended Warranty needs 2 clicks (expand disclosure → tap Add) | Notice ✅ (core-ish flow), but feel-wronged/act-publicly fail — annoyance on a non-core add-on, not grievance | demoted 🟡→🟢: two-taps-where-one-would-do is friction, not betrayal; the feature works |
+| 🟢 LOW | S99 | Scout returns value ranges vs. locked point-estimate screenshot | Marketing-mismatch only (sharpener 2); the range itself is *more* honest — fails feel-wronged as a defect | cleared to 🟢 — range is a positive, not a bug; only angle is a screenshot mismatch, a marketing item |
+| 🟢 LOW | S67 | Add Extended Warranty needs 2 clicks (expand disclosure → tap Add) | Notice ✅ (core-ish flow), but feel-wronged/act-publicly fail — annoyance on a non-core add-on, not grievance | cleared to 🟢 — two-taps-where-one-would-do is friction, not betrayal; the feature works |
 
 **⚪ pile:** none in this batch (both were user-facing, just low-risk).
 
-*Bands are a contestable lens, ungrounded (no real-review corpus this run), and overridable —
-not a measurement. Both findings are worth doing for polish; neither threatens the launch
+*Bands are a contestable lens, ungrounded (no real reviews to learn from this run), and
+overridable — not a measurement. Both findings are worth doing for polish; neither threatens the launch
 rating.*
 
 ---

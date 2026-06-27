@@ -4,6 +4,11 @@ Long-form companion to SKILL.md. Read this when you want the *why* behind a band
 example to calibrate against. The operational rubric in SKILL.md is the canonical short form;
 this file does not override it.
 
+> Two terms used below, in plain English: **rubric** = the scoring method (the three-part test
+> plus the skeptic pass). **demotion** = lowering a finding's risk band (e.g. 🟡→🟢) — a *good*
+> outcome, less risk than it first looked. In the skill's reader-facing output this same move is
+> phrased "cleared to 🟢" precisely so the direction isn't mistaken for "made worse."
+
 ## Where this came from
 
 The criterion was developed by a solo developer ranking a pre-launch deferred-work backlog the

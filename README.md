@@ -24,7 +24,34 @@ treats its scores as guesses.
 
 It does **not** find bugs — you feed it issues you already have, and it triages them. And it is
 deliberately built to *talk itself down*: a scary-looking tag that it can't justify in one
-sentence gets demoted, so the top of the list is trustworthy rather than alarmist.
+sentence gets its risk lowered, so the top of the list is trustworthy rather than alarmist.
+
+## A note on what these ratings are
+
+The bands are a **reasoned opinion, not a measurement.** There is no score under the hood — each
+tag comes from a judgment call (does a real user notice this, feel wronged, and act on it?),
+sharpened against competitor reviews when some are available. Two honest people could disagree
+on any single band, and the skill is built to invite exactly that: every tag names the one reason
+it survives, so you can overrule it.
+
+Treat the output as a **prioritized starting point for your own judgment**, not a verdict. When a
+run learns only from recent App Store reviews — or from no reviews at all — it leans more
+speculative still, and says so in its opening line. Less to learn from means lower confidence in
+the bands; the skill surfaces that rather than hiding it.
+
+## Before you run it
+
+This skill **triages a list you already have — it does not generate one.** So you need
+something to feed it first. That "something" is any list of issues, for example:
+
+- the output of a code-review or audit skill you just ran (this is the main use),
+- a `git diff` of changes you're about to ship,
+- a plain TODO / backlog file, or
+- issues you just describe in chat.
+
+If you run `/one-star-risk` with nothing to score, it has nothing to do. The usual order is:
+**run an auditor → hand its findings to this skill → get them ranked by review risk.** Think of
+it as the second step, not the first.
 
 ## Install
 
@@ -54,9 +81,9 @@ theoretical — [`applyra`](skills/one-star-risk/providers/applyra.md) (verified
 [`appfigures`](skills/one-star-risk/providers/appfigures.md) (an unverified stub showing how to add
 your own). Adding a different vendor is a one-file adapter; see the contract.
 
-Every run **reports its grounding tier** and degrades loudly when there's no corpus. A paid
-provider deepens the *evidence*, never the *rubric* — paying buys better-grounded scores, not
-better scores. The skill does not recommend buying anything.
+Every run **reports its grounding tier** and degrades loudly when there are no reviews to learn
+from. A paid provider deepens the *evidence*, never the scoring method — paying buys
+better-grounded scores, not better scores. The skill does not recommend buying anything.
 
 ## Maintenance / best-effort contract
 
@@ -68,9 +95,44 @@ lets a one-file PR fix a broken vendor without touching the core. PRs welcome.
 ## Example
 
 A full worked run — two real findings scored, both passing through the aggressive skeptic
-pass and getting demoted — is in [`examples/worked-run.md`](examples/worked-run.md). It shows
-the ungrounded-degradation honesty line, the named triggers, and the `🟡 → 🟢` demotions with
-their reasons.
+pass and having their risk lowered — is in [`examples/worked-run.md`](examples/worked-run.md).
+It shows the ungrounded-degradation honesty line, the named triggers, and the `🟡 → 🟢`
+risk-lowering verdicts with their reasons.
+
+## The risk strip — two ways you'll see it
+
+Each finding's verdict can carry a small **risk strip**: a left-to-right scale,
+**At risk → Watch → Clear**, with a star marking the band. Further right means *safer* — less
+like what actually gets these apps one-starred. The **zone is the band** (firm); the star's
+nudge *within* a zone is only a **lean** toward the neighbour (`deep` / `mid` / `border`), never
+a precise score.
+
+You'll see one of two forms depending on **where the skill is running** — you don't pick, the
+skill detects the surface:
+
+**1. Rich strip — in a chat client that can render widgets** (Claude Code's app/web UI). The
+strip renders as an interactive colored bar inside the verdict, like this:
+
+> At risk · Watch · **Clear** &nbsp;&nbsp;`🟢` &nbsp; ⟨———————————☆—⟩ &nbsp; *clear*
+>
+> *(In a widget-capable client this is a colored red→amber→blue bar with a white star marker.
+> It's drawn live, so it can't be embedded as-is in this README — the line above is a flattened
+> stand-in.)*
+
+**2. Markdown strip — everywhere else** (a written-back `UNFORGET.md`, a pasted report, a CI
+log, a plain terminal). The same information falls back to ASCII so it survives copy-paste:
+
+```
+🟡 A15  Newsletter silently undelivered    Watch   |····★·····| Clear   (watch → clear, mid)
+🟢 A20  Latent sync dependency             Clear   |········★·| Clear   (border → just clear)
+🟢 A6   3 screens miss a search entry      Clear   |·········★| Clear   (clear)
+```
+
+**Both forms always show the same three things together** so a strip can't be misread on its
+own: the **band glyph** (🔴/🟡/🟢/⚪), the **zone word** in text, and the strip. Colour is never the
+only cue — which also keeps it readable with colour-vision deficiency. And the strip never
+travels without the run's **grounding line** and the count of ⚪ internal findings it set aside,
+so "none in the red" is never mistaken for a clean bill of health it didn't earn.
 
 ## Layout
 
