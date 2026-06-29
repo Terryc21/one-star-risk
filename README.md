@@ -1,5 +1,7 @@
 # one-star-risk
 
+![Version](https://img.shields.io/github/v/tag/Terryc21/one-star-risk?label=version) ![Last commit](https://img.shields.io/github/last-commit/Terryc21/one-star-risk) ![Stars](https://img.shields.io/github/stars/Terryc21/one-star-risk?style=flat) ![Issues](https://img.shields.io/github/issues/Terryc21/one-star-risk) ![License](https://img.shields.io/github/license/Terryc21/one-star-risk) ![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blueviolet)
+
 A Claude Code skill that answers one question before you ship an app:
 **which of your known issues could actually cost you a one-star review?**
 
@@ -167,6 +169,12 @@ sits on top of what these *find*:
 | [skill-reviewer](https://github.com/Terryc21/skill-reviewer) | Candid reviews of Claude Code skills, with file:line citations and ranked actions. |
 | [tutorial-creator](https://github.com/Terryc21/tutorial-creator) | Generates personalized coding lessons from your own codebase. |
 | [prompter](https://github.com/Terryc21/prompter) | Rewrites your prompts for clarity before they run. |
+
+## Author
+
+Terry Nyberg, [Coffee & Code LLC](https://stuffolio.app/). If one-star-risk talks you out of shipping a rating-killer — or out of wasting a cycle on an issue no user would ever notice — [a coffee](https://buymeacoffee.com/stuffolio) is appreciated. Issue reports about what worked or didn't are more useful.
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/stuffolio)
 
 ## License
 
