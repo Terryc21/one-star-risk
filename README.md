@@ -178,4 +178,4 @@ Terry Nyberg, [Coffee & Code LLC](https://stuffolio.app/). If one-star-risk talk
 
 ## License
 
-Apache-2.0.
+Apache License 2.0. See [LICENSE](LICENSE).
