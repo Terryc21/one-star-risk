@@ -1,7 +1,7 @@
 {
   "name": "one-star-risk",
   "version": "0.1.0",
-  "description": "Re-score audit findings (a diff, a file, a TODO list, or another auditor's output) for App Store one-star-review risk. A judgment LENS, not a detector: it assigns each finding a band with a NAMED, overridable trigger, runs an aggressive skeptic pass that demotes any band it can't defend, and grounds in real competitor reviews via a pluggable provider seam (free App Store RSS default, optional paid Applyra adapter). Reports its grounding tier every run and degrades loudly when ungrounded.",
+  "description": "Re-score audit findings (a diff, a file, a TODO list, or another auditor's output) for App Store one-star-review risk. A judgment LENS, not a detector: it assigns each finding a band with a NAMED, overridable trigger, runs an aggressive skeptic pass that demotes any band it can't defend, and grounds in real competitor reviews via a pluggable provider seam (free App Store RSS default, optional paid adapters — e.g. Applyra, Appfigures — with no vendor required or endorsed). Reports its grounding tier every run and degrades loudly when ungrounded. Use when asked to \"scope for one-star risk\", \"which findings threaten my rating\", \"rank deferred work by review risk\", \"what would get me review-bombed\", or before an App Store launch.",
   "author": {
     "name": "Terry Nyberg"
   },

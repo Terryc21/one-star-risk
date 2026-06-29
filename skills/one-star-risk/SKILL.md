@@ -130,7 +130,7 @@ it was wrong" feeling. The skill grounds against real competitor reviews when it
 ### How grounding plugs in (provider seam, not hardcoded vendors)
 
 The skill talks to **a provider**, never to a specific vendor — **no ASO company is endorsed or
-required.** Providers live in `providers/`. Three ship in v1:
+required.** Providers live in `providers/`. Three ship in the initial release:
 
 - **`providers/rss.md`** — free default, zero setup, the public path. Apple's public RSS
   customer-reviews feed. No key, no account. **This is what everyone uses unless they opt in.**

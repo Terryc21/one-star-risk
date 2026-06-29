@@ -94,10 +94,10 @@ lets a one-file PR fix a broken vendor without touching the core. PRs welcome.
 
 ## Example
 
-A full worked run — two real findings scored, both passing through the aggressive skeptic
-pass and having their risk lowered — is in [`examples/worked-run.md`](examples/worked-run.md).
-It shows the ungrounded-degradation honesty line, the named triggers, and the `🟡 → 🟢`
-risk-lowering verdicts with their reasons.
+A full worked run — four findings scored, two cleared to 🟢, one held at 🟡, one set aside as
+⚪ — is in [`examples/worked-run.md`](examples/worked-run.md). It shows the
+ungrounded-degradation honesty line, the named triggers, the `🟡 → 🟢` risk-lowering verdicts
+with their reasons, and the one band that *holds* under the aggressive skeptic pass.
 
 ## The risk strip — two ways you'll see it
 
@@ -149,7 +149,7 @@ skills/one-star-risk/
   reference/
     rubric.md              # provenance + worked examples (the 🔴 and the 🟡→🟢 demotion)
 examples/
-  worked-run.md            # a real S67/S99 scoring run, ungrounded path
+  worked-run.md            # a real four-finding scoring run, ungrounded path
 ```
 
 ## Related skills
