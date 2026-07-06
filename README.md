@@ -2,6 +2,8 @@
 
 ![Version](https://img.shields.io/github/v/tag/Terryc21/one-star-risk?label=version) ![Last commit](https://img.shields.io/github/last-commit/Terryc21/one-star-risk) ![Stars](https://img.shields.io/github/stars/Terryc21/one-star-risk?style=flat) ![Issues](https://img.shields.io/github/issues/Terryc21/one-star-risk) ![License](https://img.shields.io/github/license/Terryc21/one-star-risk) ![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blueviolet)
 
+> **TL;DR** — Feed it a list of known issues (a `git diff`, a `TODO` list, another review's findings) and it tags each one 🔴/🟡/🟢/⚪ by how much it could actually cost you an App Store rating — explaining every tag in one sentence so you can overrule it. Grounded in *why apps really get one-starred*, and built to talk itself down so the top of the list is trustworthy, not alarmist. It triages issues; it doesn't find them. **[See a worked run →](examples/worked-run.md)**
+
 A Claude Code skill that answers one question before you ship an app:
 **which of your known issues could actually cost you a one-star review?**
 
