@@ -1,5 +1,6 @@
 ---
 name: one-star-risk
+version: 0.1.0
 description: Re-score audit findings (a diff, a file, a TODO list, or another auditor's output) for App Store one-star-review risk. Assigns each finding a 🔴/🟡/🟢/⚪ band with a NAMED, overridable trigger, grounded in real competitor reviews when available. Use when asked to "scope for one-star risk", "which findings threaten my rating", "rank deferred work by review risk", "what would get me review-bombed", or before an App Store launch. A judgment LENS, not a detector — it does not find bugs, it scores findings you already have.
 license: Apache-2.0
 ---
