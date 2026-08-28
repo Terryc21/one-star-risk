@@ -30,6 +30,8 @@ It does **not** find bugs — you feed it issues you already have, and it triage
 deliberately built to *talk itself down*: a scary-looking tag that it can't justify in one
 sentence gets its risk lowered, so the top of the list is trustworthy rather than alarmist.
 
+*4 min read · [a worked run](examples/worked-run.md) · [what these ratings are, and are not](#a-note-on-what-these-ratings-are) · [the rubric](skills/one-star-risk/reference/rubric.md)*
+
 ## A note on what these ratings are
 
 The bands are a **reasoned opinion, not a measurement.** There is no score under the hood — each
